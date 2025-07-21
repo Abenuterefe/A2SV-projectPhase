@@ -34,9 +34,9 @@ The Task Manager API is a simple RESTful service for managing tasks. It is built
 git clone https://github.com/your-username/task-manager
 cd task-manager
 go run main.go
+```
 
-
-Task Model
+## Task Model
 The in-memory task data uses the following structure:
 ```type Task struct {
     ID          string `json:"id"`
@@ -54,9 +54,9 @@ Title: short title of the task
 Description: optional detailed information
 
 
-API END POINTS
+## API END POINTS
 
-GET /tasks
+## GET /tasks
 Retrieve a list of all tasks.
 
 Response:
@@ -72,7 +72,7 @@ Response:
 ]
 ```
 
-GET /tasks/:id
+## GET /tasks/:id
 Retrieve a specific task by its ID.
 
 Parameters:
@@ -86,7 +86,7 @@ Response:
 `404 Not Found` if task does not exist
 
 
-POST /tasks
+## POST /tasks
 Create a new task.
 
 Request Body:
@@ -96,7 +96,7 @@ Request Body:
   "description": "This is a new task"
 }
 ```
-PUT /tasks/:id
+## PUT /tasks/:id
 Update an existing task by ID.
 
 Request Body:
@@ -112,7 +112,7 @@ Response:
 
 `404 Not` Found if task does not exist
 
-DELETE /tasks/:id
+## DELETE /tasks/:id
 Delete a task by ID.
 
 Response:
@@ -122,10 +122,40 @@ Response:
 `404 Not Found` if task does not exist
 
 
-Example Usage
+## Example Usage
 
 Add a Task
 ```curl -X POST http://localhost:8080/tasks \
   -H "Content-Type: application/json" \
   -d '{"title":"Write Docs","description":"Write documentation for Go app"}'
 ```
+
+## Get All Tasks 
+
+`curl http://localhost:8080/tasks`
+
+## Update a Task
+
+```curl -X PUT http://localhost:8080/tasks/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Updated Task","description":"Changed desc"}'
+```
+
+## Delete Tasks 
+`curl -X DELETE http://localhost:8080/tasks/1`
+
+## Limitations
+Tasks are stored in memory only — they will be lost when the app stops.
+
+No authentication or user support.
+
+No pagination or search functionality.
+
+No data validation.
+
+## Troubleshooting
+Missing Task ID: Ensure the task you're trying to update/delete exists.
+
+App Restart Loses Data: All data is held in memory; use a database for persistence.
+
+Port Already in Use: Change the default port in `main.go`.
