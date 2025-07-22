@@ -1,16 +1,16 @@
 ## Table of Contents
 
-- [Task Manager ](#Task Manager)
-- [Task Model Structure](#Task Model Structure)
-- [Features](# Features)
-- [tech stack](#Tech Stack)
-  - [get all task](#get all task)
-  - [get specific task](#get specific task)
-  - [post task](#post task)
-  - [update specific task](#update specific task)
-  - [delete specific task](#delete specific task)
+- [Task Manager](#task-manager)
+- [Features](#features)
+- [Task Model Structure](#task-model-structure)
+- [Tech Stack](#tech-stack)
+  - [Get All Task](#get-all-task)
+  - [Get Specific Task](#get-specific-task)
+  - [Post Task](#post-task)
+  - [Update Specific Task](#update-specific-task)
+  - [Delete Specific Task](#delete-specific-task)
 
-
+---
 
 ## Task Manager 
 
